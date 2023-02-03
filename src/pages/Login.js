@@ -76,7 +76,7 @@ class Login extends Component {
       </form>);
     return (
       <div data-testid="page-login">
-        <span>{ getResponse ? <Redirect to="/search" /> : console.log('waiting') }</span>
+        { getResponse ? <Redirect to="/search" /> : console.log('waiting') }
         {loading ? <Loading /> : LoginForm }
       </div>
     );
