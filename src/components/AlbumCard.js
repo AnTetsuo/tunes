@@ -7,17 +7,23 @@ class AlbumCard extends Component {
     return (
       <div className="album-card">
         <img src={ albumCover } alt="albumName" />
-        <p>{ albumName }</p>
-        <p>{ name }</p>
+        <p data-testid="album-name">{ albumName }</p>
+        <p data-testid="artist-name">{ name }</p>
       </div>
     );
   }
 }
 
+AlbumCard.defaultProps = {
+  name: 'Artist Name',
+  albumName: 'Collection Name',
+  albumCover: 'NOT FOUND',
+};
+
 AlbumCard.propTypes = {
-  name: PropTypes.string.isRequired,
-  albumName: PropTypes.string.isRequired,
-  albumCover: PropTypes.string.isRequired,
+  name: PropTypes.string,
+  albumName: PropTypes.string,
+  albumCover: PropTypes.string,
 };
 
 export default AlbumCard;
