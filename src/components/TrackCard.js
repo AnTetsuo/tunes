@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { addSong } from '../services/favoriteSongsAPI';
+import { addSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
 import trackObjTypes from './types/types';
 
 class TrackCard extends Component {
@@ -13,6 +13,11 @@ class TrackCard extends Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.returnCheck = this.returnCheck.bind(this);
+    this.getFavoriteMusicOnLoad = this.getFavoriteMusicOnLoad.bind(this);
+  }
+
+  componentDidMount() {
+    this.getFavoriteMusicOnLoad();
   }
 
   async handleChange() {
@@ -22,7 +27,33 @@ class TrackCard extends Component {
       },
       async () => {
         const { trackObj, trackId } = this.props;
-        await addSong(trackObj);
+        const favoriteList = JSON.parse(localStorage.getItem('favorite_songs'));
+        const alreadyInFavorites = favoriteList
+          .some((track) => track.trackId === trackId);
+        if (alreadyInFavorites) {
+          this.setState({
+            loading: false,
+            isFavorite: this.returnCheck(trackId),
+          });
+        } else {
+          await addSong(trackObj);
+          this.setState({
+            loading: false,
+            isFavorite: this.returnCheck(trackId),
+          });
+        }
+      },
+    );
+  }
+
+  async getFavoriteMusicOnLoad() {
+    this.setState(
+      {
+        loading: true,
+      },
+      async () => {
+        const { trackId } = this.props;
+        await getFavoriteSongs();
         this.setState({
           loading: false,
           isFavorite: this.returnCheck(trackId),
