@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { addSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
+import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 import trackObjTypes from './types/types';
 
 class TrackCard extends Component {
@@ -31,9 +31,10 @@ class TrackCard extends Component {
         const alreadyInFavorites = favoriteList
           .some((track) => track.trackId === trackId);
         if (alreadyInFavorites) {
+          await removeSong(trackObj);
           this.setState({
             loading: false,
-            isFavorite: this.returnCheck(trackId),
+            isFavorite: false,
           });
         } else {
           await addSong(trackObj);
