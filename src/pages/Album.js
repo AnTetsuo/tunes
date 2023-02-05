@@ -37,6 +37,8 @@ class Album extends Component {
     const trackListCall = trackList.map((track) => (
       <TrackCard
         key={ track.trackId }
+        trackObj={ track }
+        trackId={ track.trackId }
         trackName={ track.trackName }
         trackUrl={ track.previewUrl }
       />));
