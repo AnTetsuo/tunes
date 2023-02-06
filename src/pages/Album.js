@@ -41,6 +41,7 @@ class Album extends Component {
         trackId={ track.trackId }
         trackName={ track.trackName }
         trackUrl={ track.previewUrl }
+        handleChangeChildState={ () => {} }
       />));
     return (
       <div data-testid="page-album">

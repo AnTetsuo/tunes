@@ -54,7 +54,7 @@ class Search extends Component {
       <div key="div-album-list">
         <p key="message">{`Resultado de álbuns de: ${artistSearch}`}</p>
         {albumList.map((album, index) => (
-          <>
+          <div key={ index + album.artworkUrl100 }>
             <AlbumCard
               key={ index + album.collectionId }
               name={ artistSearch }
@@ -68,7 +68,7 @@ class Search extends Component {
             >
               Link
             </Link>
-          </>
+          </div>
         ))}
       </div>);
     const requestReturn = albumList.length !== 0 ? mappedAlbums : notFoundMessage;
