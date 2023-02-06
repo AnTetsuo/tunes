@@ -30,7 +30,6 @@ class Profile extends Component {
       },
       async () => {
         const responseUser = await getUser();
-        console.log(responseUser);
         this.setState({
           userObj: responseUser,
           loading: false,
