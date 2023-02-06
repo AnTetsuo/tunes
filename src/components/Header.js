@@ -53,7 +53,7 @@ class Header extends Component {
             to="/favorites"
             data-testid="link-to-favorites"
           >
-            Favoriotes
+            Favorites
           </Link>
           <Link
             to="/profile"

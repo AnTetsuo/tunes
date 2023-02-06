@@ -70,7 +70,7 @@ class TrackCard extends Component {
   }
 
   render() {
-    const { trackName, trackUrl, trackId } = this.props;
+    const { trackName, trackUrl, trackId, handleChangeChildState } = this.props;
     const { loading, isFavorite } = this.state;
     const trackElement = (
       <>
@@ -92,6 +92,7 @@ class TrackCard extends Component {
             name={ trackId }
             onChange={ this.handleChange }
             checked={ isFavorite }
+            onClick={ handleChangeChildState }
           />
           Favorita
         </label>
