@@ -110,6 +110,7 @@ TrackCard.propTypes = {
   trackUrl: PropTypes.string.isRequired,
   trackId: PropTypes.number.isRequired,
   trackObj: PropTypes.shape(trackObjTypes).isRequired,
+  handleChangeChildState: PropTypes.func.isRequired,
 };
 
 export default TrackCard;
