@@ -46,12 +46,17 @@ class Profile extends Component {
         <Link to="/profile/edit">Editar perfil</Link>
         <h3>{ name }</h3>
         <p>{ description }</p>
-        <img src={ image } alt={ description } data-testid="profile-image" />
+        <img
+          className="pfp"
+          src={ image }
+          alt={ description }
+          data-testid="profile-image"
+        />
         <p>{ email }</p>
       </section>
     );
     return (
-      <div data-testid="page-profile">
+      <div data-testid="page-profile" className="app-display">
         <Header />
         <h2>Profile</h2>
         { loading ? 'Carregando' : userDisplay }

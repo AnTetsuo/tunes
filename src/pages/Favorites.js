@@ -49,10 +49,12 @@ class Favorites extends Component {
       />))
       : '';
     return (
-      <div data-testid="page-favorites">
+      <div data-testid="page-favorites" className="app-display">
         <Header />
         <h2>Favorites</h2>
-        { mappedFavoriteTracks }
+        <div className="track-list">
+          { mappedFavoriteTracks }
+        </div>
       </div>
     );
   }

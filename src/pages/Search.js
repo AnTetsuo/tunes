@@ -51,10 +51,15 @@ class Search extends Component {
     const notFoundMessage = artistSearch
       ? <h3>Nenhum álbum foi encontrado</h3> : '';
     const mappedAlbums = (
-      <div key="div-album-list">
-        <p key="message">{`Resultado de álbuns de: ${artistSearch}`}</p>
+      <div key="div-album-list" className="search-result-container">
+        <p
+          className="message"
+          key="message"
+        >
+          {`Resultado de álbuns de: ${artistSearch}`}
+        </p>
         {albumList.map((album, index) => (
-          <div key={ index + album.artworkUrl100 }>
+          <div key={ index + album.artworkUrl100 } className="album">
             <AlbumCard
               key={ index + album.collectionId }
               name={ artistSearch }
@@ -73,7 +78,7 @@ class Search extends Component {
       </div>);
     const requestReturn = albumList.length !== 0 ? mappedAlbums : notFoundMessage;
     return (
-      <div data-testid="page-search">
+      <div data-testid="page-search" className="app-display">
         <Header />
         <h2>Search</h2>
         <form>

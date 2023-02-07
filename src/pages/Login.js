@@ -55,6 +55,7 @@ class Login extends Component {
         <h2>Login</h2>
         <label
           htmlFor="login-name"
+          className="app-display"
         >
           Insira seu Nome
           <input

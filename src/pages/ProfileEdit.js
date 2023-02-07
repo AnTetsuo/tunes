@@ -71,34 +71,51 @@ class ProfileEdit extends Component {
     const { name, description, image, email } = userObj;
     const profileInput = (
       <>
-        <input
-          name="name"
-          type="text"
-          data-testid="edit-input-name"
-          defaultValue={ name }
-          onChange={ this.handleChange }
-        />
-        <input
-          name="email"
-          type="text"
-          data-testid="edit-input-email"
-          defaultValue={ email }
-          onChange={ this.handleChange }
-        />
+        <label
+          htmlFor="name"
+        >
+          Edite seu Nome:
+          <input
+            id="name"
+            name="name"
+            type="text"
+            data-testid="edit-input-name"
+            defaultValue={ name }
+            onChange={ this.handleChange }
+          />
+        </label>
+        <label
+          htmlFor="email"
+        >
+          Edite seu Email:
+          <input
+            name="email"
+            type="text"
+            data-testid="edit-input-email"
+            defaultValue={ email }
+            onChange={ this.handleChange }
+          />
+        </label>
         <textarea
           name="description"
           data-testid="edit-input-description"
           maxLength="140"
           defaultValue={ description }
           onChange={ this.handleChange }
+          placeholder="entre sua descrição aqui"
         />
-        <input
-          name="img"
-          type="text"
-          data-testid="edit-input-image"
-          defaultValue={ image }
-          onChange={ this.handleChange }
-        />
+        <label
+          htmlFor="img"
+        >
+          Imagem de Perfil:
+          <input
+            name="img"
+            type="text"
+            data-testid="edit-input-image"
+            defaultValue={ image }
+            onChange={ this.handleChange }
+          />
+        </label>
         <Link to="/profile">
           <button
             type="button"
@@ -112,7 +129,7 @@ class ProfileEdit extends Component {
       </>
     );
     return (
-      <div data-testid="page-profile-edit">
+      <div data-testid="page-profile-edit" className="app-display">
         <Header />
         <h2>Profile Edit</h2>
         { loading ? <span>Carregando...</span> : profileInput }

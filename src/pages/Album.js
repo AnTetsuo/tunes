@@ -44,10 +44,14 @@ class Album extends Component {
         handleChangeChildState={ () => {} }
       />));
     return (
-      <div data-testid="page-album">
+      <div data-testid="page-album" className="app-display">
         <Header />
         <AlbumCard name={ artistName } albumName={ albumName } albumCover={ albumUrl } />
-        {trackListCall}
+        <div
+          className="track-list"
+        >
+          {trackListCall}
+        </div>
       </div>
     );
   }

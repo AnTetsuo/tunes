@@ -37,11 +37,6 @@ class Header extends Component {
       <header
         data-testid="header-component"
       >
-        <p
-          data-testid="header-user-name"
-        >
-          { loading ? 'Carregando...' : userGet.name }
-        </p>
         <div className="nav-links">
           <Link
             to="/search"
@@ -62,6 +57,12 @@ class Header extends Component {
             Profile
           </Link>
         </div>
+        <p
+          data-testid="header-user-name"
+          className="username"
+        >
+          { loading ? 'Carregando...' : userGet.name }
+        </p>
       </header>
     );
   }
