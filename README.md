@@ -34,7 +34,7 @@ Tela que mostra as informações da pessoa usuária, inicialmente renderizando s
 
 ###
 
-<font size="1">"Importante: Os arquivos no caminho `./src/services` foram funções auxiliares que simulam requisições ao interagir com o localStorage do browser e garantindo que as chaves que vamos interagir durante a apliacação existam e foram desenvolvidas pelo Trybe. Foi de minha autoria os arquivos localizados na pasta `./src/pages` e `./src/components` e `./index.css`
+<span><font size="2">Importante: Os arquivos no caminho `./src/services` foram funções auxiliares que simulam requisições ao interagir com o localStorage do browser e garantindo que as chaves que vamos interagir durante a apliacação existam e foram desenvolvidas pelo Trybe. Foi de minha autoria os arquivos localizados na pasta `./src/pages` e `./src/components` e `./index.css`</span>
 
 ###
 
